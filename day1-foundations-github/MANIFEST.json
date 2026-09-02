@@ -1,0 +1,18 @@
+{
+  "repository": "day1-foundations-github",
+  "files": [
+    ".env.example",
+    ".gitignore",
+    "LICENSE",
+    "README.md",
+    "docs/Day1-Foundations-Lab-Submission.md",
+    "docs/RUN-GUIDE.md",
+    "examples/lab-evidence-template.md",
+    "requirements.txt",
+    "src/agent_loop.py",
+    "src/check_setup.py",
+    "src/ollama_shim.py",
+    "src/plain_vs_agent.py"
+  ],
+  "zip_bytes": 19388
+}
