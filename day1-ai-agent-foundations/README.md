@@ -1,5 +1,47 @@
 # Day 1 — AI Agent Foundations
 
+
+## ✅ How to produce the grader-ready COMPLETE submission
+
+The course grader requires **actual execution evidence** for Labs 1.2 and 1.3.  
+Do **not** submit `docs/Day1-Foundations-Lab-Submission.md` directly.
+
+### Windows
+
+From the repository root:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\GENERATE-COMPLETE-SUBMISSION.ps1
+```
+
+### macOS/Linux
+
+With `ollama serve` already running:
+
+```bash
+./GENERATE-COMPLETE-SUBMISSION.sh
+```
+
+The pipeline will:
+
+1. execute the agent twice;
+2. capture exact step counts and tool-call order;
+3. run all three required modifications;
+4. execute the plain call;
+5. capture real input/output token counts;
+6. retain raw traces;
+7. generate the final document;
+8. fail validation if anything is still incomplete.
+
+### Submit only
+
+```text
+submission/Day1-Foundations-Lab-Submission-FINAL.md
+```
+
+If that file does not exist, the graded submission has **not** been completed yet.
+
+
 GitHub-ready repository for the **Day 1 — Foundations** theory/lab work.
 
 ## What this repo contains

@@ -1,13 +1,19 @@
 {
-  "repository": "day1-foundations-github",
-  "purpose": "GitHub-ready Day 1 foundations lab with real-evidence capture tooling",
+  "repository": "day1-ai-agent-foundations",
+  "version": "v3-completeness-pipeline",
+  "grader_ready_output": "submission/Day1-Foundations-Lab-Submission-FINAL.md",
+  "generator_windows": "GENERATE-COMPLETE-SUBMISSION.ps1",
+  "generator_unix": "GENERATE-COMPLETE-SUBMISSION.sh",
   "files": [
     ".env.example",
     ".gitignore",
+    "GENERATE-COMPLETE-SUBMISSION.ps1",
+    "GENERATE-COMPLETE-SUBMISSION.sh",
     "LICENSE",
     "MANIFEST.json",
     "README.md",
     "docs/COMPLETENESS-FIX.md",
+    "docs/DO-NOT-SUBMIT-DRAFT.md",
     "docs/Day1-Foundations-Lab-Submission.md",
     "docs/RUN-GUIDE.md",
     "evidence/.gitkeep",
@@ -19,6 +25,9 @@
     "src/check_setup.py",
     "src/ollama_shim.py",
     "src/plain_vs_agent.py",
-    "tools/capture_day1_evidence.py"
+    "submission/.gitkeep",
+    "tools/capture_day1_evidence.py",
+    "tools/finalize_submission.py",
+    "tools/verify_completeness.py"
   ]
 }
