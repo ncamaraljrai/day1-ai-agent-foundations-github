@@ -1,18 +1,24 @@
 {
   "repository": "day1-foundations-github",
+  "purpose": "GitHub-ready Day 1 foundations lab with real-evidence capture tooling",
   "files": [
     ".env.example",
     ".gitignore",
     "LICENSE",
+    "MANIFEST.json",
     "README.md",
+    "docs/COMPLETENESS-FIX.md",
     "docs/Day1-Foundations-Lab-Submission.md",
     "docs/RUN-GUIDE.md",
+    "evidence/.gitkeep",
     "examples/lab-evidence-template.md",
     "requirements.txt",
+    "run-evidence-windows.ps1",
+    "run-evidence.sh",
     "src/agent_loop.py",
     "src/check_setup.py",
     "src/ollama_shim.py",
-    "src/plain_vs_agent.py"
-  ],
-  "zip_bytes": 19388
+    "src/plain_vs_agent.py",
+    "tools/capture_day1_evidence.py"
+  ]
 }

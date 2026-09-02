@@ -167,3 +167,56 @@ The included written submission intentionally leaves real execution evidence mar
 ## Suggested GitHub repository name
 
 `day1-ai-agent-foundations`
+
+
+## ⚠️ Required before graded submission: capture real evidence
+
+The written analysis is **not sufficient by itself** for full completeness.  
+Labs 1.2 and 1.3 explicitly require **actual execution evidence**, including:
+
+- tool-call path / step count;
+- two-run comparison;
+- behavior after weakening the tool description;
+- behavior for missing order `#9999`;
+- behavior with `MAX_STEPS = 2`;
+- plain-call behavior;
+- real input/output token counts.
+
+### Windows — one command
+
+Open PowerShell in the repository root:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\run-evidence-windows.ps1
+```
+
+The script will ensure `qwen2.5:7b` is pulled and then execute the real local-model experiments.
+
+### macOS / Linux
+
+Start Ollama in one terminal:
+
+```bash
+ollama serve
+```
+
+Then:
+
+```bash
+./run-evidence.sh
+```
+
+### Output
+
+The run creates:
+
+```text
+evidence/day1-evidence.md
+evidence/day1-evidence.json
+evidence/raw/*.txt
+```
+
+**Do not submit while the lab document still contains `TO CAPTURE` or `TO MEASURE`.**
+Replace those placeholders using `evidence/day1-evidence.md`, or submit the evidence file alongside the written document if the learning platform accepts multiple files.
+
+The capture script uses the course-provided `ollama_shim.py` and a real local model. It does not create mocked traces.
