@@ -1,0 +1,30 @@
+SCENARIO: missing_order
+MODEL: qwen2.5:7b
+STEPS: 2
+TOOL ORDER: ['lookup_order']
+TOKENS: {'input': 875, 'output': 195, 'total': 1070}
+
+TRACE
+======================================================================
+
+STEP 1 stop_reason=tool_use
+MODEL: To determine how many business days are left before the invoice for order #9999 goes overdue, we need to follow these steps:
+
+1. Look up the order to get the invoice date and payment terms.
+2. Calculate the due date by adding the payment terms to the invoice date.
+3. Determine the number of business days remaining until the due date.
+
+Let's start by looking up the order with ID '9999'.
+ACTION: lookup_order({"order_id": "9999"})
+RESULT: {"error": "No order with id 9999. Known ids: ['4471', '4472']"}
+
+STEP 2 stop_reason=end_turn
+MODEL: It seems there is no order with the ID '9999'. The known order IDs are '4471' and '4472'. Let's proceed with one of these IDs to determine the number of business days left before the invoice goes overdue.
+
+Shall we use order ID '4471' for this calculation? If not, please provide the correct order ID.
+
+FINAL
+======================================================================
+It seems there is no order with the ID '9999'. The known order IDs are '4471' and '4472'. Let's proceed with one of these IDs to determine the number of business days left before the invoice goes overdue.
+
+Shall we use order ID '4471' for this calculation? If not, please provide the correct order ID.

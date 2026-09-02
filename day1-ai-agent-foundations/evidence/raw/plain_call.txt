@@ -1,0 +1,13 @@
+MODEL: qwen2.5:7b
+TOKENS: {'input': 55, 'output': 198, 'total': 253}
+STOP: end_turn
+
+To determine how many business days are left before the invoice for order #4471 goes overdue, I would need the following information:
+
+1. The current date.
+2. The due date of the invoice for order #4471.
+3. Whether weekends and holidays are considered non-business days.
+
+Without this information, I can't provide a specific number of business days. However, if you provide these details, I can calculate the number of business days remaining. 
+
+For example, if the current date is October 5, 2023, and the due date is October 10, 2023, and assuming no holidays, the remaining business days would be 5 (October 6, 7, 9, 10). If a weekend (October 7 and 8) is considered a non-business day, then the remaining business days would be 3 (October 6, 9, 10).

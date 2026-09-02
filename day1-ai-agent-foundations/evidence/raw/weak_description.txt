@@ -1,0 +1,48 @@
+SCENARIO: weak_description
+MODEL: qwen2.5:7b
+STEPS: 5
+TOOL ORDER: ['lookup_order', 'lookup_order', 'get_today', 'count_business_days']
+TOKENS: {'input': 3075, 'output': 527, 'total': 3602}
+
+TRACE
+======================================================================
+
+STEP 1 stop_reason=tool_use
+MODEL: To determine how many business days are left before the invoice for order #4471 goes overdue, we need to follow these steps:
+
+1. **Retrieve the Invoice Date and Payment Terms**: We will use the `lookup_order` function to get the invoice date and payment terms for order #4471.
+2. **Calculate the Due Date**: Using the invoice date and payment terms, we can calculate the due date.
+3. **Determine the Number of Business Days Left**: We will use the `count_business_days` function to count the number of business days between today and the due date.
+
+Let's start by retrieving the invoice date and payment terms for order #4471.
+ACTION: lookup_order({"order_id": "4471"})
+RESULT: {"invoiced": "2026-03-03", "terms_days": 30, "customer": "Northwind Ltd"}
+
+STEP 2 stop_reason=tool_use
+ACTION: lookup_order({"order_id": "4471"})
+RESULT: {"invoiced": "2026-03-03", "terms_days": 30, "customer": "Northwind Ltd"}
+
+STEP 3 stop_reason=tool_use
+MODEL: The invoice for order #4471 was issued on 2026-03-03 with payment terms of 30 days. This means the due date for the invoice is 30 days after the invoice date.
+
+Let's calculate the due date and then determine how many business days are left before the invoice goes overdue.
+ACTION: get_today({})
+RESULT: {"today": "2026-09-02"}
+
+STEP 4 stop_reason=tool_use
+MODEL: The current date is 2026-09-02. The due date for the invoice, which is 30 days after the invoice date of 2026-03-03, is 2026-04-02.
+
+Now, we need to calculate the number of business days between today (2026-09-02) and the due date (2026-04-02). Let's use the `count_business_days` function to find out.
+ACTION: count_business_days({"end": "2026-09-02", "start": "2026-04-02"})
+RESULT: {"business_days": 107}
+
+STEP 5 stop_reason=end_turn
+MODEL: The number of business days left before the invoice for order #4471 goes overdue is 107 days. This calculation is based on the due date being 30 days after the invoice date of 2026-03-03, and today's date being 2026-09-02. 
+
+Therefore, there are 107 business days remaining before the invoice goes overdue.
+
+FINAL
+======================================================================
+The number of business days left before the invoice for order #4471 goes overdue is 107 days. This calculation is based on the due date being 30 days after the invoice date of 2026-03-03, and today's date being 2026-09-02. 
+
+Therefore, there are 107 business days remaining before the invoice goes overdue.

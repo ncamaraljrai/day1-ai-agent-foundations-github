@@ -1,0 +1,30 @@
+SCENARIO: max_steps_2
+MODEL: qwen2.5:7b
+STEPS: 2
+TOOL ORDER: ['lookup_order', 'count_business_days']
+TOKENS: {'input': 900, 'output': 255, 'total': 1155}
+
+TRACE
+======================================================================
+
+STEP 1 stop_reason=tool_use
+MODEL: To determine how many business days are left before the invoice for order #4471 goes overdue, we need to follow these steps:
+
+1. **Find the invoice date and payment terms for order #4471** using the `lookup_order` function.
+2. **Calculate the due date** by adding the payment terms to the invoice date.
+3. **Determine the number of business days remaining** until the due date from today's date using the `count_business_days` function.
+
+Let's start by looking up the order details.
+ACTION: lookup_order({"order_id": "4471"})
+RESULT: {"invoiced": "2026-03-03", "terms_days": 30, "customer": "Northwind Ltd"}
+
+STEP 2 stop_reason=tool_use
+MODEL: The invoice for order #4471 was issued on 2026-03-03 with payment terms of 30 days. Therefore, the due date for this invoice is 30 days from the invoice date.
+
+Next, I will calculate the due date and then determine how many business days are left until that date from today's date.
+ACTION: count_business_days({"start": "2026-03-03", "end": "2026-04-02"})
+RESULT: {"business_days": 21}
+
+FINAL
+======================================================================
+Stopped: step limit reached
